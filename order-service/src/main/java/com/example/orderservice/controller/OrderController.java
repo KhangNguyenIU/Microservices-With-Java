@@ -24,7 +24,7 @@ public class OrderController {
     @TimeLimiter(name = "inventory")
     @Retry(name = "inventory")
     public CompletableFuture<String> placeOrder(@RequestBody OrderRequest orderRequest){
-        return CompletableFuture.supplyAsync(()->orderService.placeOrder(orderRequest));
+        return CompletableFuture.supplyAsync(() -> orderService.placeOrder(orderRequest));
 
     }
 
